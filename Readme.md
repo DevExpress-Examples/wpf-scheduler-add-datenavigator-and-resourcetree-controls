@@ -2,7 +2,7 @@
 *Files to look at*:
 
 * [MainWindow.xaml](./CS/SchedulerDateNavigatorExample/MainWindow.xaml) (VB: [MainWindow.xaml](./VB/SchedulerDateNavigatorExample/MainWindow.xaml))
-* [MainWindow.xaml.cs](./CS/SchedulerDateNavigatorExample/MainWindow.xaml.cs) (VB: [MainWindow.xaml](./VB/SchedulerDateNavigatorExample/MainWindow.xaml))
+* [MainWindow.xaml.cs](./CS/SchedulerDateNavigatorExample/MainWindow.xaml.cs) (VB: [MainWindow.xaml.vb](./VB/SchedulerDateNavigatorExample/MainWindow.xaml.vb))
 <!-- default file list end -->
 # How to use Scheduler with DateNavigator
 
