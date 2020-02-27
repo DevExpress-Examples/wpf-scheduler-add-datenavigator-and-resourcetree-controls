@@ -1,13 +1,13 @@
 <!-- default file list -->
 *Files to look at*:
 
-* [MainWindow.xaml](./CS/SchedulerDateNavigatorExample/MainWindow.xaml) (VB: [MainWindow.xaml](./VB/SchedulerDateNavigatorExample/MainWindow.xaml))
-* [MainWindow.xaml.cs](./CS/SchedulerDateNavigatorExample/MainWindow.xaml.cs) (VB: [MainWindow.xaml.vb](./VB/SchedulerDateNavigatorExample/MainWindow.xaml.vb))
+* [MainWindow.xaml](./CS/DXSample/MainWindow.xaml) (VB: [MainWindow.xaml](./VB/DXSample/MainWindow.xaml))
+
 <!-- default file list end -->
-# How to use Scheduler with DateNavigator
+# How to use Scheduler with DateNavigator and ResourceTreeControl
 
 
-This example follows the <a href="http://help.devexpress.com/#WPF/CustomDocument118066">How to: Create the Scheduler with the DateNavigator</a> topic and demonstrates how to create a scheduling application with the <strong>DateNavigator</strong> control to enable end-users selecting date ranges for display.<br><br>
+We show the approach from the [How to: Create the Scheduler with the DateNavigator](http://help.devexpress.com/#WPF/CustomDocument118066) topic in this example. It demonstrates how to associate the Scheduler with **DateNavigator** to allow end-users to select date ranges for display and/or with **ResourceTreeControl** to allow end-users to show/hide resources.
 
 <br/>
 
