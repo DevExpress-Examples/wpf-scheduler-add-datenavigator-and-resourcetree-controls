@@ -1,0 +1,75 @@
+<dx:ThemedWindow x:Class="DXSample.MainWindow"
+                 xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                 xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+                 xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors"
+                 xmlns:dxsch="http://schemas.devexpress.com/winfx/2008/xaml/scheduling"
+                 xmlns:ViewModels="clr-namespace:DXSample.ViewModels"
+                 Width="1400"
+                 Height="1000"
+                 Title="Scheduling"
+                 WindowKind="Normal">
+
+    <dx:ThemedWindow.DataContext>
+        <ViewModels:SchedulingViewModel />
+    </dx:ThemedWindow.DataContext>
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+        <dxsch:SchedulerControl x:Name="scheduler"
+                                ActiveViewType="DayView"
+                                GroupType="Resource">
+            <dxsch:SchedulerControl.DataSource>
+                <dxsch:DataSource AppointmentLabelsSource="{Binding SportGroups}"
+                                  AppointmentsSource="{Binding SportEvents}"
+                                  ResourcesSource="{Binding SportChannels}">
+                    <dxsch:DataSource.AppointmentMappings>
+                        <dxsch:AppointmentMappings AllDay="AllDay"
+                                                   End="EndTime"
+                                                   Id="Id"
+                                                   LabelId="SportId"
+                                                   RecurrenceInfo="RecurrenceInfo"
+                                                   Reminder="ReminderInfo"
+                                                   ResourceId="ChannelId"
+                                                   Start="StartTime"
+                                                   Subject="Caption"
+                                                   Type="Type" />
+                    </dxsch:DataSource.AppointmentMappings>
+                    <dxsch:DataSource.ResourceMappings>
+                        <dxsch:ResourceMappings Caption="Caption"
+                                                Id="Id" />
+                    </dxsch:DataSource.ResourceMappings>
+                    <dxsch:DataSource.AppointmentLabelMappings>
+                        <dxsch:AppointmentLabelMappings Color="Color"
+                                                        Caption="Caption"
+                                                        Id="Id" />
+                    </dxsch:DataSource.AppointmentLabelMappings>
+                </dxsch:DataSource>
+            </dxsch:SchedulerControl.DataSource>
+        </dxsch:SchedulerControl>
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="0.4*" />
+            </Grid.RowDefinitions>
+            <dxe:DateNavigator Margin="5">
+                <dxe:DateNavigator.StyleSettings>
+                    <dxsch:SchedulerDateNavigatorStyleSettings MaxSelectedConsecutiveWeeks="3"
+                                                               MaxSelectedNonConsecutiveDates="5"
+                                                               Scheduler="{Binding ElementName=scheduler}" />
+                </dxe:DateNavigator.StyleSettings>
+            </dxe:DateNavigator>
+            <GridSplitter Grid.Row="1"
+                          Height="3"
+                          HorizontalAlignment="Stretch" />
+            <dxsch:ResourceTreeControl Grid.Row="2"
+                                       Margin="5"
+                                       Scheduler="{Binding ElementName=scheduler}" />
+        </Grid>
+    </Grid>
+
+</dx:ThemedWindow>
