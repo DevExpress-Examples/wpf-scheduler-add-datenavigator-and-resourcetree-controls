@@ -344,9 +344,8 @@ Namespace DXSample.Data
 			res.Type = 0
 			Return res
 		End Function
-'INSTANT VB NOTE: The variable events was renamed since Visual Basic does not handle local variables named the same as class members well:
-		Private Shared Function GetRandomString(ByVal events_Conflict() As String) As String
-			Return events_Conflict(rnd.Next(0, events_Conflict.Count()))
+		Private Shared Function GetRandomString(ByVal events() As String) As String
+			Return events(rnd.Next(0, events.Count()))
 		End Function
 		Private Shared Function GetEvents(ByVal sportId As Integer) As String()
 			Select Case sportId
